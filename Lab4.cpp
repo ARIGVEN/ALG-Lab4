@@ -54,24 +54,24 @@ int dice(const std::string& specStr) {
 }
 
 int main() {
-    // Пример использования
+   
     std::cout << "Пример броска: \"2d6,d10+3\" = " 
               << dice("2d6,d10+3") << "\n\n";
     
-    // Исследуем распределения
+    
     std::vector<std::string> configs = {"1d6", "2d6", "3d6", "1d10", "2d10", "3d10"};
     const int trials = 100000;
     
     for (const auto& config : configs) {
         std::map<int, int> freq;
         
-        // Моделируем броски
+      
         for (int i = 0; i < trials; ++i) {
             int result = dice(config);
             freq[result]++;
         }
         
-        // Находим максимум для масштабирования гистограммы
+        
         int maxFreq = 0;
         for (const auto& [val, count] : freq) {
             if (count > maxFreq) maxFreq = count;
