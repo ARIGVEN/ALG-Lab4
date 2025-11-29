@@ -77,7 +77,7 @@ int main() {
             if (count > maxFreq) maxFreq = count;
         }
         
-        // Выводим распределение
+       
         std::cout << config << " (" << trials << " бросков):\n";
         std::cout << "Знач Частота Вероятность Гистограмма\n";
         
